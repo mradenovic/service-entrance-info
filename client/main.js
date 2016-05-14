@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import sei from '../imports/components/serviceEntranceInfo/serviceEntranceInfo';
