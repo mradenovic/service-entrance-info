@@ -10,13 +10,14 @@ class PlaceCtrl {
   constructor($scope) {
     $scope.viewModel(this);
 
-/*
     this.autorun(() => {
       if (GoogleMaps.loaded()) {
-        $("#address").geocomplete();
+        $("#address").geocomplete({
+          map: '#map',
+          details: 'form'
+        });
       }
     });
-*/
 
     this.helpers({
       places() {
