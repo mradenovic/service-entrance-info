@@ -5,6 +5,7 @@ import uiRouter from 'angular-ui-router';
 import template from'./serviceEntranceInfo.html';
 
 import navigation from '../navigation/navigation';
+import place from '../place/place';
 
 
 class ServiceEntranceInfoCtrl {}
@@ -15,7 +16,8 @@ const name = 'serviceEntranceInfo';
 export default angular.module(name, [
   angularMeteor,
   uiRouter,
-  navigation.name
+  navigation.name,
+  place.name
 ]).component(name, {
   templateUrl: `imports/components/${name}/${name}.html`,
   controller: ServiceEntranceInfoCtrl
