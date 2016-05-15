@@ -15,3 +15,11 @@ if (Meteor.isCordova) {
 } else {
   angular.element(document).ready(onReady);
 }
+
+Meteor.startup(() => {
+  GoogleMaps.load({
+  /* TODO Replace API key */
+//    key: 'AIzaSyAK_vkvxDH5vsqGkd0Qn-dDmq-rShTA7UA',
+    libraries: 'places'
+  });
+});
