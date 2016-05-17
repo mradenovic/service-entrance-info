@@ -38,9 +38,10 @@ TODO Move form and map to separate components
       </div>
   </div>
 </div>
+<!-- TODO Hide map component when there is nothing to show -->
 <div class="row">
   <div  class="col-lg-12">
-    <p>Google Map</p>
+    <p>{{$ctrl.place.formatted_address}}</p>
     <div class="google-map-container" id="map"></div>
   </div>
 </div>
