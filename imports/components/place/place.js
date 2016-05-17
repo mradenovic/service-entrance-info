@@ -10,12 +10,21 @@ class PlaceCtrl {
   constructor($scope) {
     $scope.viewModel(this);
 
+    this.place = {};
+
     this.autorun(() => {
       if (GoogleMaps.loaded()) {
-        $("#address").geocomplete({
-          map: '#map',
-          details: 'form'
-        });
+        $("#address")
+          .geocomplete({
+            map: '#map',
+            details: 'form'
+          })
+          .bind('geocode:result',(event, result) => {
+            this.place = result;
+
+            console.log(result);
+            $scope.$apply();
+          });
       }
     });
 
