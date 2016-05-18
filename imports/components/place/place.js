@@ -51,6 +51,11 @@ class PlaceCtrl {
     this.place = null;
   }
 
+  search() {
+    $("#address").trigger("geocode");
+    console.log('Submitted')
+  }
+
   removePlace(place) {
     Places.remove(place._id);
   }
