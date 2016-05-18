@@ -2,6 +2,13 @@ import { Mongo } from 'meteor/mongo';
 
 export const Infos = new Mongo.Collection('infos');
 
+if (Meteor.isServer) {
+  // This code only runs on the server
+  Meteor.publish('infos', function publishInfos() {
+    return Infos.find();
+  });
+}
+
 Meteor.methods({
   'infos.insert' (info) {
     check(text, String);
