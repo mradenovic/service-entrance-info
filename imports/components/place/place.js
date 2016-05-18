@@ -32,14 +32,10 @@ class PlaceCtrl {
       infos() {
         const selector ={};
 
-        for (let attr in this.getReactively('place', true)) {
-          if (this.getReactively('place.'+attr) != '') {
-            selector[attr] = this.getReactively('place.'+attr);
-          } else {
-            delete selector[attr];
-          }
-        }
+        selector.place_id = this.getReactively('place.place_id');
 
+        console.log(selector);
+        console.log(Infos.find(selector));
         return Infos.find(selector);
       }
     })

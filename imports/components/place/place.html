@@ -33,9 +33,25 @@ TODO Move form and map to separate components
   </div>
   <div class="col-md-6">
     <div id="info">
-      <p>Info</p>
-      <img class="img-responsive" src="http://placehold.it/600x300">
-      </div>
+      <ul>
+        <li  ng-repeat="info in $ctrl.infos">
+          <div>
+            <h5>{{$index}} {{info.place_id}} is temmporary: {{info.isTemporary}} approved by {{info.approvedBy}} contributors</h5>
+            <p>Service entrance location: {{info.location}}</p>
+            <p>Type: {{info.type}}</p>
+            <p>Check in: {{info.check_in}}</p>
+            <p>Long push: {{info.long_push}} ft</p>
+            <p>Elevator size: {{info.elevator.size}} dollies</p>
+            <p>Elevator is dedicated: {{info.elevator.isDedicated}}</p>
+            <p>Elevator has operator: {{info.elevator.hasOperator}}</p>
+            <p>Restriction: {{info.restriction.from.day}} {{info.restriction.from.time}} - {{info.restriction.to.day}} {{info.restriction.to.time}}</p>
+            <p>Parking type: {{info.parking.type}}</p>
+            <p>Parking restriction: {{info.parking.restriction}}</p>
+            <p>{{info.note}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 <!-- TODO Hide map component when there is nothing to show -->
