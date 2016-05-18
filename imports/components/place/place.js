@@ -12,6 +12,8 @@ class PlaceCtrl {
 
     this.place = {};
 
+    this.subscribe('infos');
+
     this.autorun(() => {
       if (GoogleMaps.loaded()) {
         $("#address")
