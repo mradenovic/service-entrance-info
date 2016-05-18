@@ -4,7 +4,7 @@ import uiRouter from 'angular-ui-router';
 
 import template from './place.html';
 
-import { Places } from '../../api/places.js'
+import { Infos } from '../../api/infos.js'
 
 class PlaceCtrl {
   constructor($scope) {
@@ -29,7 +29,7 @@ class PlaceCtrl {
     });
 
     this.helpers({
-      places() {
+      infos() {
         const selector ={};
 
         for (let attr in this.getReactively('place', true)) {
@@ -40,7 +40,7 @@ class PlaceCtrl {
           }
         }
 
-        return Places.find(selector);
+        return Infos.find(selector);
       }
     })
   }

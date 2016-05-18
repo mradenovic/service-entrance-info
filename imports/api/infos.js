@@ -1,9 +1,9 @@
 import { Mongo } from 'meteor/mongo';
 
-export const Places = new Mongo.Collection('places');
+export const Infos = new Mongo.Collection('infos');
 
 Meteor.methods({
-  'places.insert' (place) {
+  'infos.insert' (info) {
     check(text, String);
 
     // Make sure the user is logged in before inserting a task
@@ -13,6 +13,6 @@ Meteor.methods({
     }
 */
 
-    Places.insert(place); //Place object {_id: place_id}
+    Infos.insert(info); //Info object
   },
 });
