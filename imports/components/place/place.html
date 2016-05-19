@@ -33,21 +33,38 @@ TODO Move form and map to separate components
   </div>
   <div class="col-md-6">
     <div id="info">
-      <ul>
-        <li  ng-repeat="info in $ctrl.infos">
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="info in $ctrl.infos">
           <div>
-            <h5>{{$index}} {{info.place_id}} is temmporary: {{info.isTemporary}} approved by {{info.approvedBy}} contributors</h5>
-            <p>Service entrance location: {{info.location}}</p>
-            <p>Type: {{info.type}}</p>
-            <p>Check in: {{info.check_in}}</p>
-            <p>Long push: {{info.long_push}} ft</p>
-            <p>Elevator size: {{info.elevator.size}} dollies</p>
-            <p>Elevator is dedicated: {{info.elevator.isDedicated}}</p>
-            <p>Elevator has operator: {{info.elevator.hasOperator}}</p>
-            <p>Restriction: {{info.restriction.from.day}} {{info.restriction.from.time}} - {{info.restriction.to.day}} {{info.restriction.to.time}}</p>
-            <p>Parking type: {{info.parking.type}}</p>
-            <p>Parking restriction: {{info.parking.restriction}}</p>
-            <p>{{info.note}}</p>
+            <div ng-if="info.isTemporary" class="alert alert-warning">This is temmporary condition</div>
+            <strong>{{$ctrl.place.formatted_address}}</strong>
+            <p>
+              <strong>Service entrance</strong>
+              <span ng-if="info.location">{{info.location}};</span>
+              <span>{{info.type}};</span>
+              <span ng-if="info.long_push">long push <span class="badge">{{info.long_push}}</span> ft;</span>
+              <span ng-if="info.check_in">Check in at {{info.check_in}};</span>
+            </p>
+            <p ng-if="info.elevator">
+              <strong>Elevator</strong>
+              <span ng-if="info.elevator.isDedicated"><span class="badge">dedicated;</span></span>
+              <span ng-if="!info.elevator.isDedicated"><span class="bg-warning" >shared;</span></span>
+              <span ng-if="info.elevator.size">fits <span class="badge">{{info.elevator.size}}</span> dollies;</span>
+              <span ng-if="info.elevator.hasOperator">assigned opperator;</span>
+              <span ng-if="!info.elevator.hasOperator">self service;</span>
+            </p>
+            <p ng-if="info.restriction">
+              <strong>Restriction</strong>
+              <span ng-if="info.restriction">
+                {{info.restriction.from.day}} {{info.restriction.from.time}} - {{info.restriction.to.day}} {{info.restriction.to.time}}
+              </span>
+            </p>
+            <p ng-if="info.parking" id="parking">
+              <strong>Parking: </strong>
+              <span ng-if="info.parking.type">{{info.parking.type}} parking;</span>
+              <span ng-if="info.parking.restriction">{{info.parking.restriction}}</span>
+            </p>
+            <span ng-if="info.note">Note: {{info.note}}</span>
           </div>
         </li>
       </ul>
@@ -57,7 +74,6 @@ TODO Move form and map to separate components
 <!-- TODO Hide map component when there is nothing to show -->
 <div class="row">
   <div  class="col-lg-12">
-    <p>{{$ctrl.place.formatted_address}}</p>
     <div class="google-map-container" id="map"></div>
   </div>
 </div>
