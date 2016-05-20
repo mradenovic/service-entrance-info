@@ -24,7 +24,6 @@ class PlaceCtrl {
           .bind('geocode:result',(event, result) => {
             this.place = result;
 
-            console.log(result);
             $scope.$apply();
           });
       }
@@ -36,26 +35,12 @@ class PlaceCtrl {
 
         selector.place_id = this.getReactively('place.place_id');
 
-        console.log(selector);
-        console.log(Infos.find(selector));
         return Infos.find(selector);
       }
     })
   }
-
-  addPlace() {
-    let place = this.place;
-    // Clear form
-    this.place = null;
-  }
-
   search() {
     $("#address").trigger("geocode");
-    console.log('Submitted')
-  }
-
-  removePlace(place) {
-    Places.remove(place._id);
   }
 }
 
