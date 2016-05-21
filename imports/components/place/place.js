@@ -10,7 +10,7 @@ class PlaceCtrl {
   constructor($scope) {
     $scope.viewModel(this);
 
-    this.place = {};
+    this.search = {};
 
     this.subscribe('infos');
 
@@ -22,7 +22,8 @@ class PlaceCtrl {
             details: 'form'
           })
           .bind('geocode:result',(event, result) => {
-            this.place = result;
+            this.search.place_id = result.place_id;
+            this.search.formatted_address = result.formatted_address;
             this.search.address = result.formatted_address.split(',')[0];
 
             $scope.$apply();
@@ -34,7 +35,7 @@ class PlaceCtrl {
       infos() {
         const selector ={};
 
-        selector.place_id = this.getReactively('place.place_id');
+        selector.place_id = this.getReactively('search.place_id');
 
         return Infos.find(selector);
       }

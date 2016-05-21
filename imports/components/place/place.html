@@ -34,7 +34,7 @@ TODO Move form and map to separate components
   <div class="col-md-6">
     <div id="info">
       <ul class="list-group">
-        <strong id="formatted_addres">{{$ctrl.place.formatted_address}}</strong>
+        <strong id="formatted_addres">{{$ctrl.search.formatted_address}}</strong>
         <li class="list-group-item" ng-repeat="info in $ctrl.infos">
           <div>
             <div ng-if="info.isTemporary" class="alert alert-warning">This is temmporary condition</div>
