@@ -23,6 +23,7 @@ class PlaceCtrl {
           })
           .bind('geocode:result',(event, result) => {
             this.place = result;
+            this.search.address = result.formatted_address.split(',')[0];
 
             $scope.$apply();
           });
