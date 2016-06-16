@@ -4,7 +4,8 @@ import uiRouter from 'angular-ui-router';
 
 import template from './place.html';
 
-import { Infos } from '../../api/infos.js'
+import { Infos } from '../../api/infos.js';
+import infoForm from '../infoForm/infoForm'
 
 class PlaceCtrl {
   constructor($scope) {
@@ -51,6 +52,7 @@ const name = 'place';
 export default angular.module(name, [
   angularMeteor,
   uiRouter,
+  infoForm.name
 ])
   .component(name, {
     templateUrl: 'imports/components/place/place.html',
