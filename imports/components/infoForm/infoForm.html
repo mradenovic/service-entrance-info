@@ -1,0 +1,237 @@
+<div ng-if="$ctrl.info.isTemporary" class="alert alert-warning">This is temmporary condition</div>
+
+<form class="">
+  <div>
+      <p class="">
+        <strong>Service entrance</strong>
+      </p>
+      <div class="form-group">
+        <label for="location" class="sr-only">Location</label>
+      </div>
+
+      <!-- Location control control -->
+      <div ng-init="location.select=true"  class="form-group">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default" data-toggle="button" aria-pressed="false" autocomplete="off" ng-click="location.select=!location.select">Location</button>
+          </div><!-- /btn-group -->
+
+          <input  ng-if="!location.select" ng-model="$ctrl.info.location" type="text" class="form-control" id="location" autocomplete="off">
+
+          <select ng-if="location.select" ng-model="$ctrl.info.location" type="text" class="form-control" id="location-select" placeholder="Type" autocomplete="off">
+            <option>{{$ctrl.info.location}}</option>
+            <option>left of main entrance</option>
+            <option>right of main entrance</option>
+          </select>
+          <span class="input-group-btn">
+            <button class="btn btn-danger" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </div>
+
+      <!-- Type control -->
+      <div ng-init="type.select=true" class="form-group">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default" data-toggle="button" aria-pressed="false" autocomplete="off" ng-click="type.select=!type.select">Type</button>
+          </div><!-- /btn-group -->
+
+          <input ng-if="!type.select" ng-model="$ctrl.info.type" type="text" class="form-control" id="type" placeholder="location" autocomplete="off">
+
+          <select ng-if="type.select" ng-model="$ctrl.info.type" type="text" class="form-control" id="type-select" placeholder="Type" autocomplete="off">
+            <option>{{$ctrl.info.type}}</option>
+            <option>Stairs to the basement</option>
+            <option>stairs to the first floor</option>
+            <option>ramp to the basemant</option>
+            <option>ramp to the first floor</option>
+          </select>
+          <span class="input-group-btn">
+            <button class="btn btn-danger" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </div>
+
+      <!-- Long push control-->
+      <div class="form-group">
+        <div>
+          <div class="input-group">
+            <span class="input-group-addon">Long push</span>
+            <input ng-model="$ctrl.info.long_push" type="range" min="60" max="300" step="10" class="form-control" id="long_push" placeholder="Long push" autocomplete="off">
+            <span class="input-group-addon">{{$ctrl.info.long_push}} ft.</span>
+            <span class="input-group-btn">
+              <button class="btn btn-danger" type="button">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Check in control -->
+      <div ng-init="check_in.select=true" class="form-group">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default" data-toggle="button" aria-pressed="false" autocomplete="off" ng-click="check_in.select=!check_in.select">Check in</button>
+          </div><!-- /btn-group -->
+
+          <input ng-if="!check_in.select" ng-model="$ctrl.info.check_in" type="text" class="form-control" id="check_in"  autocomplete="off">
+
+          <select ng-if="check_in.select" ng-model="$ctrl.info.check_in" type="text" class="form-control" id="type-check_in" autocomplete="off">
+            <option>{{$ctrl.info.check_in}}</option>
+            <option>Front desk</option>
+            <option>Service entrance</option>
+            <option>Call superintendant</option>
+          </select>
+          <span class="input-group-btn">
+            <button class="btn btn-danger" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </div>
+  </div>
+
+        <strong>Elevator</strong>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="form-group">
+        <div class="checkbox">
+          <label>
+            <input ng-model="$ctrl.info.elevator.isDedicated" type="checkbox" value="">
+            Dedicated
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-6">
+      <div class="form-group">
+        <div class="checkbox">
+          <label>
+            <input ng-model="$ctrl.info.elevator.hasOperator" type="checkbox" value="">
+            Operator
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">Size</span>
+            <label for="elevatorSizeSelect" class="sr-only">Size</label>
+            <input ng-model="$ctrl.info.elevator.size" type="range" min="0" max="10" class="form-control" id="elevatorSizeSelect" >
+            <span class="input-group-addon">{{$ctrl.info.elevator.size}} dollies</span>
+            <span class="input-group-btn">
+              <button class="btn btn-danger" type="button">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </span>
+          </div>
+      </div>
+
+
+  <div>
+      <strong>Parking</strong>
+
+      <!-- Parking type control -->
+      <div ng-init="parking.type.select=true" class="form-group">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default" data-toggle="button" aria-pressed="false" autocomplete="off" ng-click="parking.type.select=!parking.type.select">Type</button>
+          </div><!-- /btn-group -->
+
+          <input ng-if="!parking.type.select" ng-model="$ctrl.info.parking.type" type="text" class="form-control" id="parking.type"  autocomplete="off">
+
+          <select ng-if="parking.type.select" ng-model="$ctrl.info.parking.type" type="text" class="form-control" id="type-parking.type" autocomplete="off">
+            <option>{{$ctrl.info.parking.type}}</option>
+            <option>Street</option>
+            <option>Parking lot</option>
+            <option>Loading dock</option>
+          </select>
+          <span class="input-group-btn">
+            <button class="btn btn-danger" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </div>
+
+      <!-- Parking restriction control -->
+      <div ng-init="parking.restriction.select=true" class="form-group">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default" data-toggle="button" aria-pressed="false" autocomplete="off" ng-click="parking.restriction.select=!parking.restriction.select">Restr.</button>
+          </div><!-- /btn-group -->
+
+          <input ng-if="!parking.restriction.select" ng-model="$ctrl.info.parking.restriction" type="text" class="form-control" id="parking.restriction"  autocomplete="off">
+
+          <select ng-if="parking.restriction.select" ng-model="$ctrl.info.parking.restriction" type="text" class="form-control" id="type-parking.restriction" autocomplete="off">
+            <option>{{$ctrl.info.parking.restriction}}</option>
+            <option>No standing any time</option>
+            <option>No parking anytime</option>
+            <option>Street cleaning</option>
+          </select>
+          <span class="input-group-btn">
+            <button class="btn btn-danger" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </div>
+  </div>
+
+
+
+  <div>
+      <strong>Restriction</strong>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-3">
+      <div class="form-group">
+        <label for="restrictionFromDay" class="sr-only">From day</label>
+        <select ng-model="$ctrl.info.restriction.from.day" type="text" class="form-control" id="restrictionFromDay" placeholder="From day" autocomplete="off">
+          <option>Mon</option>
+          <option>Tue</option>
+          <option>Wed</option>
+          <option>Thu</option>
+          <option>Fri</option>
+          <option>Sat</option>
+          <option>Sun</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <div class="form-group">
+        <label for="restrictionFromTime" class="sr-only">From Time</label>
+        <input ng-model="$ctrl.info.restriction.from.time" type="text" class="form-control" id="restrictionFromTime" placeholder="From time" autocomplete="off">
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <div class="form-group">
+        <label for="restrictionToDay" class="sr-only">From day</label>
+        <select ng-model="$ctrl.info.restriction.to.day" type="text" class="form-control" id="restrictionToDay" placeholder="To day" autocomplete="off">
+          <option>Mon</option>
+          <option>Tue</option>
+          <option>Wed</option>
+          <option>Thu</option>
+          <option>Fri</option>
+          <option>Sat</option>
+          <option>Sun</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <div class="form-group">
+        <label for="restrictionToTime" class="sr-only">From Time</label>
+        <input ng-model="$ctrl.info.restriction.to.time" type="text" class="form-control" id="restrictionToTime" placeholder="To time" autocomplete="off">
+      </div>
+    </div>
+  </div>
+
+  <div>
+      <div class="form-group">
+        <label for="note" >Note</label>
+        <textarea ng-model="$ctrl.info.note"  class="form-control" id="Note" autocomplete="off"></textarea>
+      </div>
+  </div>
+
+  <button ng-click="$ctrl.updateInfo($ctrl.info)" type="submit" class="btn btn-default btn-block">Save</button>
+</form>
