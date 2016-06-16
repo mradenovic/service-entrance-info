@@ -39,6 +39,7 @@ TODO Move form and map to separate components
           <div>
             <div ng-if="info.isTemporary" class="alert alert-warning">This is temmporary condition</div>
             <p>
+              <a ui-sref="infoForm({ infoId: info._id })" ng-if="info.place_id" class="btn btn-block btn-warning">Edit Info</a>
               <strong>Service entrance</strong>
               <span ng-if="info.location">{{info.location}};</span>
               <span>{{info.type}};</span>
@@ -67,6 +68,7 @@ TODO Move form and map to separate components
             <span ng-if="info.note">Note: {{info.note}}</span>
           </div>
         </li>
+        <a ui-sref="infoForm({ placeId: $ctrl.search.place_id })" ng-if="$ctrl.search.place_id" class="btn btn-block btn-primary">Add Info</a>
       </ul>
     </div>
   </div>
