@@ -22,4 +22,10 @@ Meteor.methods({
 
     Infos.insert(info); //Info object
   },
+  'infos.update' (info) {
+    const query = {_id: info._id};
+    const update = {$set: info};
+    delete update.$set._id;
+    Infos.upsert(query, update);
+  }
 });
