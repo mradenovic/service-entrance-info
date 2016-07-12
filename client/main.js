@@ -19,7 +19,7 @@ if (Meteor.isCordova) {
 Meteor.startup(() => {
   GoogleMaps.load({
   /* TODO Replace API key */
-//    key: 'AIzaSyAK_vkvxDH5vsqGkd0Qn-dDmq-rShTA7UA',
+   key: 'AIzaSyAK_vkvxDH5vsqGkd0Qn-dDmq-rShTA7UA',
     libraries: 'places'
   });
 });
