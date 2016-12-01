@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
+import { PlacesComponent } from './places/places.component'
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { SearchComponent } from './search/search.component';
   ],
   declarations: [
     AppComponent,
-    SearchComponent
+    SearchComponent,
+    PlacesComponent
   ],
   bootstrap: [
     AppComponent
