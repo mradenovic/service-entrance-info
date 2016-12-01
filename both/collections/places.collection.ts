@@ -1,3 +1,5 @@
 import { MongoObservable } from 'meteor-rxjs';
 
-export const Places = new MongoObservable.Collection('places');
+import { Place } from '../models/place.model'
+
+export const Places = new MongoObservable.Collection<Place>('places');
