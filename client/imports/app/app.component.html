@@ -1,8 +1,10 @@
 <div class="container-fluid">
   <!-- Always visible div to hold navigation -->
-  <div>
-    <h1>ServiceEntrance.Info</h1>
-    Navigation
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>ServiceEntrance.Info</h1>
+      Navigation
+    </div>
   </div>
   <!-- Google AdSense for xs screen -->
   <div class="row visible-xs-block">
@@ -18,7 +20,9 @@
     <!-- Content -->
     <div class="col-sm-6 col-md-8">
       <!-- Angular2 Router Outlet -->
-      <router-outlet></router-outlet>
+      <div class="row">
+        <router-outlet></router-outlet>
+      </div>
     </div>
     <!-- Google AdSense for screen larger than xs -->
     <div class="hidden-xs col-sm-3 col-md-2">
