@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { PlacesComponent } from './places/places.component'
+import { PlaceComponent } from './place/place.component'
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { PlacesComponent } from './places/places.component'
   declarations: [
     AppComponent,
     SearchComponent,
-    PlacesComponent
+    PlacesComponent,
+    PlaceComponent
   ],
   bootstrap: [
     AppComponent
