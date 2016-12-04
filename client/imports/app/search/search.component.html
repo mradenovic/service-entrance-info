@@ -29,7 +29,5 @@
 </div>
 
 <div *ngIf="place" class="col-md-6">
-  <div [innerHTML]="place.adr_address">
-
-  </div>
+  <place [google_place]="place"></place>
 </div>
