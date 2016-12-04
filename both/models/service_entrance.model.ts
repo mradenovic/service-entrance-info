@@ -1,5 +1,6 @@
 export interface ServiceEntrance {
   place_id: string;
+  is_temporary: boolean;
   location: {
     description: string;
     lat: string;
@@ -7,13 +8,19 @@ export interface ServiceEntrance {
   }
   type: string;
   check_in: string;
+  coi_is_required: boolean;
   long_push: number;
   elevator: {
-    dedicated: boolean;
-    self_service: boolean;
+    is_dedicated: boolean;
+    is_self_operated: boolean;
     size: number;
   };
   parking: {
+    location: {
+      description: string;
+      lat: string;
+      lng: string;
+    }
     type: string;
     restriction: string;
   };
