@@ -5,10 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { MAPS_API_LOADER_CONFIG } from './app.credentials'
 import { AppRoutingModule } from './app-routing.module'
-import { AppComponent } from './app.component';
-import { SearchComponent } from './search/search.component';
-import { PlacesComponent } from './places/places.component'
-import { PlaceComponent } from './place/place.component'
+import { COMPONENTS } from './app.index';
 
 @NgModule({
   imports: [
@@ -18,13 +15,10 @@ import { PlaceComponent } from './place/place.component'
     FormsModule,
   ],
   declarations: [
-    AppComponent,
-    SearchComponent,
-    PlacesComponent,
-    PlaceComponent
+    ...COMPONENTS,
   ],
   bootstrap: [
-    AppComponent
+    COMPONENTS[0]
   ]
 })
 export class AppModule {}
