@@ -1,0 +1,20 @@
+<div *ngIf="google_place.formatted_address">
+  <div *ngIf="google_place">
+    <strong>Google PLace</strong>
+    <div>
+      {{google_place.place_id}}
+    </div>
+    <div>
+      {{google_place.formatted_address}}
+    </div>
+  </div>
+  <div *ngIf="place">
+    <strong>DB PLace</strong>
+    <div>
+      {{place.place_ids}}
+    </div>
+    <div>
+      {{place.formatted_address}}
+    </div>
+  </div>
+</div>
