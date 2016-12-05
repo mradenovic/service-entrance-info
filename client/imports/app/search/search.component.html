@@ -1,33 +1,35 @@
-<div class="col-md-6">
-  <form ng-submit="$ctrl.search()">
-    <div class="form-group">
-      <label for="address" class="sr-only">Address</label>
-      <input ng-model="$ctrl.search.address" type="text" class="form-control" id="address" placeholder="Address" autocomplete="off">
-    </div>
-    <div class="row">
-      <div class="col-xs-6">
-        <div class="form-group">
-          <label for="city" class="sr-only">City</label>
-          <input type="text" class="form-control" id="city" name='sublocality' placeholder="City" autocomplete="off">
+<div class="row">
+  <div class="col-md-6">
+    <form ng-submit="$ctrl.search()">
+      <div class="form-group">
+        <label for="address" class="sr-only">Address</label>
+        <input ng-model="$ctrl.search.address" type="text" class="form-control" id="address" placeholder="Address" autocomplete="off">
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="city" class="sr-only">City</label>
+            <input type="text" class="form-control" id="city" name='sublocality' placeholder="City" autocomplete="off">
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="form-group">
+            <label for="state" class="sr-only">State</label>
+            <input type="text" class="form-control" id="state" name="administrative_area_level_1_short" placeholder="State" autocomplete="off">
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="form-group">
+            <label for="postal_code" class="sr-only">Postal code</label>
+            <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="ZIP" autocomplete="off">
+          </div>
         </div>
       </div>
-      <div class="col-xs-3">
-        <div class="form-group">
-          <label for="state" class="sr-only">State</label>
-          <input type="text" class="form-control" id="state" name="administrative_area_level_1_short" placeholder="State" autocomplete="off">
-        </div>
-      </div>
-      <div class="col-xs-3">
-        <div class="form-group">
-          <label for="postal_code" class="sr-only">Postal code</label>
-          <input type="text" class="form-control" id="postal_code" name="postal_code" placeholder="ZIP" autocomplete="off">
-        </div>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-default btn-block">Search</button>
-  </form>
-</div>
+      <button type="submit" class="btn btn-default btn-block">Search</button>
+    </form>
+  </div>
 
-<div *ngIf="place" class="col-md-6">
-  <place [google_place]="place"></place>
+  <div *ngIf="place" class="col-md-6">
+    <place [google_place]="place"></place>
+  </div>
 </div>
