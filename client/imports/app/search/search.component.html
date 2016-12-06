@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="address" class="sr-only">Address</label>
+      <input type="text" class="form-control" id="address">
+    </div>
+  </div>
+
+  <div *ngIf="google_place" class="col-md-6">
+    <strong>{{google_place.formatted_address}}</strong>
+  </div>
+</div>
