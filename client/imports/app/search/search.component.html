@@ -9,4 +9,8 @@
   <div *ngIf="google_place" class="col-md-6">
     <strong>{{google_place.formatted_address}}</strong>
   </div>
+
+  <div *ngIf="google_place" class="col-md-12">
+    <google-map [google_place]="google_place"></google-map>
+  </div>
 </div>
