@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-12 map-container">
+    <sebm-google-map *ngIf="place"
+        [latitude]="place.lat"
+        [longitude]="place.lng"
+        [zoom]="zoom">
+      <div *ngIf="markers">
+        <sebm-google-map-marker
+          *ngFor="let marker of markers"
+            [latitude]="marker.lat"
+            [longitude]="marker.lng">
+        </sebm-google-map-marker>
+      </div>
+    </sebm-google-map>
+  </div>
+</div>
