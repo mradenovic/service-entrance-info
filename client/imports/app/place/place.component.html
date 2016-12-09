@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-xs-12">
+    <search></search>
+  </div>
+
+  <div *ngIf="place" class="col-xs-12">
+    <strong>{{place.formatted_address}}</strong>
+  </div>
+
+  <div *ngIf="place" class="col-xs-12">
+    <google-map [place]="place"></google-map>
+  </div>
+</div>
