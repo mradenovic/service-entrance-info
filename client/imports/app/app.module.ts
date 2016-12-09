@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { MAPS_API_LOADER_CONFIG } from './app.credentials'
@@ -14,6 +14,9 @@ import { AppRoutingModule } from './app-routing.module'
   ],
   declarations: [
     ...COMPONENTS,
+  ],
+  providers: [
+    Title,
   ],
   bootstrap: [
     COMPONENTS[0]
