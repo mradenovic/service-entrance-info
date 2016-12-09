@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import { Title }     from '@angular/platform-browser';
 
 import 'rxjs/add/operator/map';
 
@@ -18,7 +19,7 @@ export class PlaceComponent  implements OnInit {
   places: Observable<Place[]>;
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute, private titleService: Title
   ) {}
 
   ngOnInit() {
@@ -26,6 +27,9 @@ export class PlaceComponent  implements OnInit {
       .map(params => params['place_id'])
       .subscribe(place_id => {
         this.place = Places.findOne({place_id: place_id});
+        if (this.place) {
+          this.titleService.setTitle( this.place.formatted_address);
+        }
       });
   }
 }
