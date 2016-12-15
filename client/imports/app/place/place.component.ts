@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
 import { Title }     from '@angular/platform-browser';
+import { Subscription } from 'rxjs/Subscription';
+import { MeteorObservable } from 'meteor-rxjs';
 
 import 'rxjs/add/operator/map';
 
@@ -14,22 +15,30 @@ import { Place } from '../../../../both/models/place.model'
   selector: 'place',
   template: template,
 })
-export class PlaceComponent  implements OnInit {
+export class PlaceComponent  implements OnInit, OnDestroy {
   place: Place;
-  places: Observable<Place[]>;
+  paramsSubscription: Subscription;
+  placeSubscription: Subscription;
 
   constructor(
     private route: ActivatedRoute, private titleService: Title
   ) {}
 
   ngOnInit() {
-    this.route.params
+    this.paramsSubscription = this.route.params
       .map(params => params['place_id'])
       .subscribe(place_id => {
-        this.place = Places.findOne({place_id: place_id});
-        if (this.place) {
-          this.titleService.setTitle( this.place.formatted_address);
-        }
+        this.placeSubscription = MeteorObservable.subscribe('place', place_id).subscribe(() => {
+          MeteorObservable.autorun().subscribe(() => {
+            this.place = Places.findOne({place_id: place_id});
+            this.titleService.setTitle(this.place.formatted_address);
+          })
+        });
       });
+  }
+
+  ngOnDestroy() {
+    this.placeSubscription.unsubscribe();
+    this.paramsSubscription.unsubscribe();
   }
 }
