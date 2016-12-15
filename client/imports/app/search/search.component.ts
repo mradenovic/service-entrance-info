@@ -1,6 +1,7 @@
 import { Component, NgZone } from '@angular/core';
 import {MapsAPILoader} from 'angular2-google-maps/core';
 import { Router }   from '@angular/router';
+import { MeteorObservable } from 'meteor-rxjs';
 
 import template from './search.component.html'
 
@@ -29,22 +30,29 @@ export class SearchComponent  {
       google.maps.event.addListener(autocomplete, 'place_changed', () => {
         this.zone.run(() => {
           let google_place = autocomplete.getPlace();
-          this.updatePlaces(google_place)
+          this.upsertPlace(google_place);
           this.router.navigate(['place', google_place.place_id]);
         })
       });
     });
   }
 
-  updatePlaces(google_place) {
-    let place = Places.findOne({place_id: google_place.place_id})
-    if (!place) {
-      Places.collection.insert({
-        place_id: google_place.place_id,
-        formatted_address: google_place.formatted_address,
-        lat: google_place.geometry.location.lat(),
-        lng: google_place.geometry.location.lng(),
-      });
+  upsertPlace(google_place) {
+    let place = this.getPlace(google_place);
+    MeteorObservable.call('places.upsert', place).subscribe((response) => {
+      console.log('places.upsert.sucess', response);
+    }, (error) => {
+      console.log(`Failed to invite due to ${error}`);
+    });
+  }
+
+  getPlace(google_place): Place {
+    return {
+      created_at: (new Date()),
+      place_id: google_place.place_id,
+      formatted_address: google_place.formatted_address,
+      lat: google_place.geometry.location.lat(),
+      lng: google_place.geometry.location.lng(),
     }
   }
 }
