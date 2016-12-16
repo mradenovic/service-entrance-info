@@ -3,12 +3,22 @@
     <sebm-google-map *ngIf="place"
         [latitude]="place.lat"
         [longitude]="place.lng"
+        (mapClick)="onMapClick($event)"
         [zoom]="zoom">
-      <div *ngIf="markers">
         <sebm-google-map-marker
-          *ngFor="let marker of markers"
-            [latitude]="marker.lat"
-            [longitude]="marker.lng">
+            [latitude]="place.lat"
+            [longitude]="place.lng"
+            [zIndex]=0>
+        </sebm-google-map-marker>
+      <div *ngIf="serviceEntrance">
+        <sebm-google-map-marker
+          *ngIf="serviceEntrance.location"
+            [latitude]="serviceEntrance.location.lat"
+            [longitude]="serviceEntrance.location.lng"
+            [markerDraggable]="action=='edit'"
+            (dragEnd)="onDragEnd($event)"
+            [zIndex]=1
+            [iconUrl]="'/images/service-entrance.png'">
         </sebm-google-map-marker>
       </div>
     </sebm-google-map>

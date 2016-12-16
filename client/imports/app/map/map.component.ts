@@ -9,24 +9,29 @@ import style from './map.component.scss'
   styles: [style],
 })
 export class MapComponent implements OnChanges {
-  @Input()
-  place: any;
-  markers: any[];
+  @Input() place: any;
+  @Input() serviceEntrance: any;
+  @Input() action: string;
   zoom: number = 18;
 
   ngOnChanges(changes: SimpleChanges) {
-    if ('place' in changes) {
-      this.updateMarkers();
+    console.log('MapComponent.ngOnChhange()');
+    console.log(changes)
+  }
+
+  onDragEnd($event) {
+    this.updateServiceEntranceLocation($event.coords);
+  }
+
+  onMapClick($event) {
+    if (this.action == 'edit' && !this.serviceEntrance.location) {
+      this.serviceEntrance.location = {}
+      this.updateServiceEntranceLocation($event.coords);
     }
   }
 
-  updateMarkers() {
-    this.markers = [];
-    if (this.place) {
-      this.markers.push({
-        lat: this.place.lat,
-        lng: this.place.lng,
-      })
-    }
+  updateServiceEntranceLocation(location) {
+    this.serviceEntrance.location.lat  = location.lat;
+    this.serviceEntrance.location.lng  = location.lng;
   }
 }
