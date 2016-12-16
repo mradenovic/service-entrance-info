@@ -10,6 +10,7 @@ import template from './place.component.html'
 
 import { Places } from '../../../../both/collections/places.collection'
 import { Place } from '../../../../both/models/place.model'
+import { ServiceEntrances } from '../../../../both/collections/service-entrances.collection'
 
 @Component({
   selector: 'place',
@@ -17,8 +18,10 @@ import { Place } from '../../../../both/models/place.model'
 })
 export class PlaceComponent  implements OnInit, OnDestroy {
   place: Place;
+  serviceEntrance: any;
   paramsSubscription: Subscription;
   placeSubscription: Subscription;
+  serviceEntranceSubscription: Subscription;
 
   constructor(
     private route: ActivatedRoute, private titleService: Title
@@ -34,11 +37,17 @@ export class PlaceComponent  implements OnInit, OnDestroy {
             this.titleService.setTitle(this.place.formatted_address);
           })
         });
+        this.serviceEntranceSubscription = MeteorObservable.subscribe('service_entrance', place_id).subscribe(() => {
+          MeteorObservable.autorun().subscribe(() => {
+            this.serviceEntrance = ServiceEntrances.findOne({place_ids: place_id});
+          })
+        });
       });
   }
 
   ngOnDestroy() {
     this.placeSubscription.unsubscribe();
     this.paramsSubscription.unsubscribe();
+    this.serviceEntranceSubscription.unsubscribe();
   }
 }
