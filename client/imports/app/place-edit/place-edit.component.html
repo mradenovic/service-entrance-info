@@ -1,0 +1,22 @@
+<div class="row">
+  <div *ngIf="place" class="col-xs-12">
+    <strong>{{place.formatted_address}}</strong>
+  </div>
+
+  <div *ngIf="place" class="col-xs-12">
+    <google-map [place]="place" [serviceEntrance]="serviceEntrance" [action]="'edit'"></google-map>
+  </div>
+
+  <div class="col-xs-12">
+    <service-entrance-form  [serviceEntrance]="serviceEntrance"></service-entrance-form>
+  </div>
+
+  <div class="form-inline">
+    <div class="form-group col-xs-6">
+      <button class="btn btn-default btn-block" (click)="upsertServiceEntrance()">Save</button>
+    </div>
+    <div class="form-group col-xs-6">
+      <button class="btn btn-default btn-block" (click)="viewServiceEntrance()">Cancel</button>
+    </div>
+  </div>
+</div>
