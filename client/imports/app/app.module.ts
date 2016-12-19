@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { AccountsModule } from 'angular2-meteor-accounts-ui';
 
@@ -11,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module'
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     AgmCoreModule.forRoot(MAPS_API_LOADER_CONFIG),
     AccountsModule,
   ],
