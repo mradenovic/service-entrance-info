@@ -13,6 +13,10 @@ Meteor.methods({
           updated_at: new Date(),
           'location.lat': se.location.lat,
           'location.lng': se.location.lng,
+          'coi_is_required': se.coi_is_required,
+          'check_in': se.check_in,
+          'type': se.type,
+          'long_push': se.long_push,
           'note': se.note,
         }
       },
