@@ -4,7 +4,7 @@
   </div>
 
   <div *ngIf="place" class="col-xs-12">
-    <strong>{{place.formatted_address}}</strong>
+    <service-entrance-view [place]="place"  [se]="serviceEntrance"></service-entrance-view>
   </div>
 
   <div *ngIf="place" class="col-xs-12">
