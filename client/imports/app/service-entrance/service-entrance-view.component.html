@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        {{place.formatted_address}}
+      </div>
+      <div class="panel-body">
+        <div *ngIf="!se">
+          There is no information for this place, yet. Be first to add some.
+          <strong>Contibutions are priceless!</strong>
+        </div>
+        <div *ngIf="se">
+          <div *ngIf="se.is_temporary" class="alert alert-warning">This is temmporary condition</div>
+          <p>
+            <span *ngIf="se.coi_is_required"><strong>COI</strong> is required;</span>
+            <span *ngIf="se.check_in">Check in at <strong>{{se.check_in}}</strong>;</span>
+          </p>
+          <p>
+            <strong>Service entrance</strong>
+            <span *ngIf="se.location && se.location.description">{{se.location.description}};</span>
+            <span>{{se.type}};</span>
+            <span *ngIf="se.long_push">long push <span class="badge">{{se.long_push}}</span> ft;</span>
+          </p>
+          <p *ngIf="se.elevator">
+            <strong>Elevator</strong>
+            <span *ngIf="se.elevator.is_dedicated"><span class="badge">dedicated;</span></span>
+            <span *ngIf="!se.elevator.is_dedicated"><span class="bg-warning" >shared;</span></span>
+            <span *ngIf="se.elevator.size">fits <span class="badge">{{se.elevator.size}}</span> dollies;</span>
+            <span *ngIf="!se.elevator.is_self_operated">assigned opperator;</span>
+            <span *ngIf="se.elevator.is_self_operated">self service;</span>
+          </p>
+          <p *ngIf="se.restriction">
+            <strong>Restriction</strong>
+            <span *ngIf="se.restriction">
+              {{se.restriction.days.from}} - {{se.restriction.days.to}} {{se.restriction.times.form}} - {{se.restriction.times.to}}
+            </span>
+          </p>
+          <p *ngIf="se.parking" id="parking">
+            <strong>Parking: </strong>
+            <span *ngIf="se.parking.type">{{se.parking.type}} parking;</span>
+            <span *ngIf="se.parking.restriction">{{se.parking.restriction}}</span>
+          </p>
+          <span *ngIf="se.note">Note: {{se.note}}</span>
+        </div>
+        <a class="btn btn-default btn-block" role="button" (click)="editPlace()">Edit</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12">
+  </div>
+</div>
