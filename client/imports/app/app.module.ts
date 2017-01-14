@@ -7,6 +7,7 @@ import { AccountsModule } from 'angular2-meteor-accounts-ui';
 import { MAPS_API_LOADER_CONFIG } from './app.credentials'
 import { COMPONENTS } from './app.index';
 import { AppRoutingModule } from './app-routing.module'
+import { SearchModule } from './search/search.module'
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module'
     FormsModule,
     AgmCoreModule.forRoot(MAPS_API_LOADER_CONFIG),
     AccountsModule,
+    SearchModule,
   ],
   declarations: [
     ...COMPONENTS,
