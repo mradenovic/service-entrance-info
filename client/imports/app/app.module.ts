@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from 'angular2-google-maps/core';
-import { AccountsModule } from 'angular2-meteor-accounts-ui';
 
 import { MAPS_API_LOADER_CONFIG } from './app.credentials'
 import { COMPONENTS } from './app.index';
 import { AppRoutingModule } from './app-routing.module'
 import { SearchModule } from './search/search.module'
+import { BlazeLoginButtonsModule } from './blaze-login-buttons/blaze-login-buttons.module';
 
 @NgModule({
   imports: [
@@ -15,8 +15,8 @@ import { SearchModule } from './search/search.module'
     AppRoutingModule,
     FormsModule,
     AgmCoreModule.forRoot(MAPS_API_LOADER_CONFIG),
-    AccountsModule,
     SearchModule,
+    BlazeLoginButtonsModule,
   ],
   declarations: [
     ...COMPONENTS,
