@@ -7,7 +7,7 @@ import { MAPS_API_LOADER_CONFIG } from './app.credentials'
 import { COMPONENTS } from './app.index';
 import { AppRoutingModule } from './app-routing.module'
 import { SearchModule } from './search/search.module'
-import { BlazeLoginButtonsModule } from './blaze-login-buttons/blaze-login-buttons.module';
+import { NavigationModule } from './navigation/navigation.module'
 
 @NgModule({
   imports: [
@@ -16,7 +16,7 @@ import { BlazeLoginButtonsModule } from './blaze-login-buttons/blaze-login-butto
     FormsModule,
     AgmCoreModule.forRoot(MAPS_API_LOADER_CONFIG),
     SearchModule,
-    BlazeLoginButtonsModule,
+    NavigationModule,
   ],
   declarations: [
     ...COMPONENTS,
