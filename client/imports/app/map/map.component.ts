@@ -15,8 +15,7 @@ export class MapComponent implements OnChanges {
   zoom: number = 18;
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('MapComponent.ngOnChhange()');
-    console.log(changes)
+
   }
 
   onDragEnd($event) {
