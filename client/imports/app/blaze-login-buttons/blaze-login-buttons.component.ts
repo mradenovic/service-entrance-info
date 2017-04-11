@@ -3,7 +3,7 @@ import {BlazeTemplate} from 'angular2-blaze-template';
 
 @Component({
   selector: "blaze-login-buttons",
-  template: `<blaze-template name="_loginButtons"></blaze-template>`,
+  template: `<blaze-template name="loginButtons"></blaze-template>`,
 })
 export class BlazeLoginButtonsComponent {
   constructor() {

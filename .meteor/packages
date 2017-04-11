@@ -21,10 +21,10 @@ hwillson:stub-collections
 dispatch:mocha-phantomjs
 shell-server@0.2.1
 jquery
-twbs:bootstrap
 accounts-password
 stylus
 accounts-google
-ian:accounts-ui-bootstrap-3
 accounts-facebook
 force-ssl
+mys:fonts
+accounts-ui

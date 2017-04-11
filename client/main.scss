@@ -1,0 +1,10 @@
+// App
+@import "imports/app/app";
+// Theme
+@import "imports/theme/variables";
+
+
+// Hide scroll-bar when not needed
+.scroll-content {
+   overflow-y: auto !important;
+}
