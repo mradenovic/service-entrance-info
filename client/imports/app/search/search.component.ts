@@ -1,6 +1,5 @@
 import { Component, NgZone } from '@angular/core';
 import {MapsAPILoader} from 'angular2-google-maps/core';
-import { Router }   from '@angular/router';
 import { MeteorObservable } from 'meteor-rxjs';
 
 import template from './search.component.html'
@@ -11,13 +10,13 @@ import { Place } from '../../../../both/models/place.model'
 declare var google: any;
 
 @Component({
-  selector: 'search',
+  selector: 'searchbar-input',
   template: template,
 })
 export class SearchComponent  {
 
   constructor(
-    private _loader: MapsAPILoader, private zone: NgZone, private router: Router) {
+    private _loader: MapsAPILoader, private zone: NgZone) {
   }
 
   ngOnInit() {
@@ -26,12 +25,13 @@ export class SearchComponent  {
 
   autocomplete() {
     this._loader.load().then(() => {
-      let autocomplete = new google.maps.places.Autocomplete(document.getElementById("address"), {});
+      let inputField = document.querySelector('.searchbar-input');
+      let autocomplete = new google.maps.places.Autocomplete(inputField, {});
       google.maps.event.addListener(autocomplete, 'place_changed', () => {
         this.zone.run(() => {
           let google_place = autocomplete.getPlace();
           this.upsertPlace(google_place);
-          this.router.navigate(['place', google_place.place_id]);
+          // this.router.navigate(['place', google_place.place_id]);
         })
       });
     });
@@ -54,5 +54,9 @@ export class SearchComponent  {
       lat: google_place.geometry.location.lat(),
       lng: google_place.geometry.location.lng(),
     }
+  }
+
+  goToPlace(google_place) {
+    ;// TODO imlement frowarding
   }
 }

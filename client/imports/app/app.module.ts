@@ -1,32 +1,34 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { AppComponent } from "./app.component";
+
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { MAPS_API_LOADER_CONFIG } from './app.credentials';
+import { SearchModule } from './search/search.module';
+import { BlazeLoginButtonsModule } from './blaze-login-buttons/blaze-login-buttons.module';
 
-import { MAPS_API_LOADER_CONFIG } from './app.credentials'
-import { AppRoutingModule } from './app-routing.module'
-import { SearchModule } from './search/search.module'
-import { NavigationModule } from './navigation/navigation.module'
-import { PlacesModule } from './places/places.module'
-
-import { AppComponent } from './app.component'
 
 @NgModule({
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    BlazeLoginButtonsModule,
+    IonicModule.forRoot(AppComponent),
+
     AgmCoreModule.forRoot(MAPS_API_LOADER_CONFIG),
     SearchModule,
-    NavigationModule,
-    PlacesModule,
   ],
   declarations: [
     AppComponent,
   ],
   providers: [
-    Title,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ],
   bootstrap: [
-    AppComponent
+    IonicApp
+  ],
+  entryComponents: [
+    AppComponent,
   ]
 })
 export class AppModule {}
