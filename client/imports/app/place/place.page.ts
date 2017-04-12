@@ -9,10 +9,10 @@ import template from './place.page.html'
   template: template,
 })
 export class PlacePage  {
-  google_place: any;
+  place_id: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.google_place = navParams.get('google_place');
+    this.place_id = navParams.get('place_id');
   }
 
 }

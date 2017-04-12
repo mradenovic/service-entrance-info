@@ -61,7 +61,7 @@ export class SearchComponent  {
 
   goToPlace(google_place) {
     this.navCtrl.push(PlacePage, {
-      google_place: google_place
+      place_id: google_place.place_id
     });
   }
 }

@@ -16,7 +16,7 @@ import { ServiceEntrances } from '../../../../both/collections/service-entrances
   template: template,
 })
 export class PlaceComponent  implements OnInit {
-  @Input() google_place: any;
+  @Input() place_id: any;
   place: Place;
   serviceEntrance: any;
   placeSubscription: Subscription;
@@ -27,7 +27,7 @@ export class PlaceComponent  implements OnInit {
   }
 
   ngOnInit() {
-    let place_id = this.google_place.place_id
+    let place_id = this.place_id
     this.placeSubscription = MeteorObservable.subscribe('place', place_id).subscribe(() => {
       MeteorObservable.autorun().subscribe(() => {
         this.place = Places.findOne({place_id: place_id});
