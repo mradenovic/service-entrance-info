@@ -1,6 +1,8 @@
 import { Component, NgZone } from '@angular/core';
 import {MapsAPILoader} from 'angular2-google-maps/core';
 import { MeteorObservable } from 'meteor-rxjs';
+import { NavController, NavParams } from 'ionic-angular';
+import { PlacePage } from '../place/place.page'
 
 import template from './search.component.html'
 
@@ -16,7 +18,8 @@ declare var google: any;
 export class SearchComponent  {
 
   constructor(
-    private _loader: MapsAPILoader, private zone: NgZone) {
+    private _loader: MapsAPILoader, private zone: NgZone,
+    public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ngOnInit() {
@@ -31,7 +34,7 @@ export class SearchComponent  {
         this.zone.run(() => {
           let google_place = autocomplete.getPlace();
           this.upsertPlace(google_place);
-          // this.router.navigate(['place', google_place.place_id]);
+          this.goToPlace(google_place)
         })
       });
     });
@@ -57,6 +60,8 @@ export class SearchComponent  {
   }
 
   goToPlace(google_place) {
-    ;// TODO imlement frowarding
+    this.navCtrl.push(PlacePage, {
+      google_place: google_place
+    });
   }
 }

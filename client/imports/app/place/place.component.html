@@ -1,13 +1,17 @@
-<div class="row">
-  <div class="col-xs-12">
-    <search></search>
-  </div>
+<ion-card  *ngIf="place">
 
-  <div *ngIf="place" class="col-xs-12">
-    <service-entrance-view [place]="place"  [se]="serviceEntrance"></service-entrance-view>
-  </div>
+  <ion-card-header>
+    {{place.formatted_address}}
+  </ion-card-header>
 
-  <div *ngIf="place" class="col-xs-12">
-    <google-map [place]="place" [serviceEntrance]="serviceEntrance"></google-map>
-  </div>
-</div>
+  <ion-card-content>
+    <!-- <service-entrance-view [place]="place"  [se]="serviceEntrance"></service-entrance-view> -->
+    <button ion-item>
+      <ion-icon name="create" item-left></ion-icon>
+      Edit
+    </button>
+  </ion-card-content>
+
+  <google-map [place]="place" [serviceEntrance]="serviceEntrance"></google-map>
+
+</ion-card>

@@ -7,7 +7,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { MAPS_API_LOADER_CONFIG } from './app.credentials';
 import { SearchModule } from './search/search.module';
 import { BlazeLoginButtonsModule } from './blaze-login-buttons/blaze-login-buttons.module';
-
+import { PlacesModule } from './places/places.module';
 
 @NgModule({
   imports: [
@@ -17,6 +17,7 @@ import { BlazeLoginButtonsModule } from './blaze-login-buttons/blaze-login-butto
 
     AgmCoreModule.forRoot(MAPS_API_LOADER_CONFIG),
     SearchModule,
+    PlacesModule,
   ],
   declarations: [
     AppComponent,
