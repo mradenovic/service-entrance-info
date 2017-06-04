@@ -1,0 +1,58 @@
+<ion-item-divider>
+  <ion-icon name="time"></ion-icon>
+  Time Restriction
+</ion-item-divider>
+
+<ion-item *ngIf="!se.restriction">
+  <button ion-button full (click)="init()">Restriction</button>
+</ion-item>
+
+<!-- <ion-item> -->
+  <ion-grid item-content>
+  <ion-row>
+    <ion-col>
+        <ion-label>Mon</ion-label>
+        <ion-checkbox [(ngModel)]="se.restriction.days.mon">
+    </ion-col>
+    <ion-col>
+        <ion-label>Tue</ion-label>
+        <ion-checkbox [(ngModel)]="se.restriction.days.tue">
+    </ion-col>
+    <ion-col>
+        <ion-label>Wed</ion-label>
+        <ion-checkbox [(ngModel)]="se.restriction.days.wed">
+    </ion-col>
+    <ion-col>
+        <ion-label>Thu</ion-label>
+        <ion-checkbox [(ngModel)]="se.restriction.days.thu">
+    </ion-col>
+    <ion-col>
+        <ion-label>Fri</ion-label>
+        <ion-checkbox [(ngModel)]="se.restriction.days.fri">
+    </ion-col>
+    <ion-col>
+        <ion-label>Sat</ion-label>
+        <ion-checkbox [(ngModel)]="se.restriction.days.sat">
+    </ion-col>
+    <ion-col>
+        <ion-label>Sun</ion-label>
+        <ion-checkbox [(ngModel)]="se.restriction.days.sun">
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<!-- </ion-item> -->
+
+<ion-row>
+  <ion-col>
+    <ion-item>
+      <ion-label>From</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="se.restriction.times.from"></ion-datetime>
+    </ion-item>
+  </ion-col>
+  <ion-col>
+    <ion-item>
+      <ion-label>To</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="se.restriction.times.to"></ion-datetime>
+    </ion-item>
+  </ion-col>
+</ion-row>

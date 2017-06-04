@@ -1,0 +1,24 @@
+<ion-card  *ngIf="place">
+
+  <ion-card-header>
+    {{place.formatted_address}}
+  </ion-card-header>
+
+  <google-map [place]="place" [serviceEntrance]="serviceEntrance" [action]="'edit'"></google-map>
+
+  <ion-card-content>
+    <service-entrance-form  *ngIf="serviceEntrance" [se]="serviceEntrance"></service-entrance-form>
+
+    <button ion-button (click)="upsertServiceEntrance()">
+      <ion-icon name="checkmark" item-left></ion-icon>
+      Save
+    </button>
+
+    <button ion-button (click)="goBack()">
+      <ion-icon name="close" item-left></ion-icon>
+      Cancel
+    </button>
+  </ion-card-content>
+
+
+</ion-card>

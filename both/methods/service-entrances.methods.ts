@@ -6,7 +6,8 @@ Meteor.methods({
   'service_entrance.upsert': (se: ServiceEntrance, place_id: string) => {
     ServiceEntrances.collection.update(
       { place_ids: [place_id], created_by: Meteor.userId() },
-      { $setOnInsert: {
+      {
+        $setOnInsert: {
           created_at: new Date()
         },
         $set: {
@@ -18,6 +19,7 @@ Meteor.methods({
           'type': se.type,
           'long_push': se.long_push,
           'note': se.note,
+          'restriction': se.restriction
         }
       },
       { upsert: true }

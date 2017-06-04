@@ -4,14 +4,14 @@
     {{place.formatted_address}}
   </ion-card-header>
 
+  <google-map [place]="place" [serviceEntrance]="serviceEntrance"></google-map>
+
   <ion-card-content>
-    <service-entrance-view [place]="place"  [se]="serviceEntrance"></service-entrance-view>
-    <button ion-button>
+    <service-entrance-view [se]="serviceEntrance"></service-entrance-view>
+    <button ion-button (click)="showPlaceModalPage()">
       <ion-icon name="create" item-left></ion-icon>
       Edit
     </button>
   </ion-card-content>
-
-  <google-map [place]="place" [serviceEntrance]="serviceEntrance"></google-map>
 
 </ion-card>

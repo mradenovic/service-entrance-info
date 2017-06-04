@@ -1,9 +1,10 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 
 import template from './place.component.html'
 
 import { PlaceClass } from './place.class';
+import { PlaceModalPage } from './place.modal.page';
 
 @Component({
   selector: 'place-component',
@@ -12,7 +13,7 @@ import { PlaceClass } from './place.class';
 export class PlaceComponent  extends PlaceClass implements OnInit {
   @Input() place_id: any;
 
-  constructor() {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController) {
     super();
   }
 
@@ -22,5 +23,13 @@ export class PlaceComponent  extends PlaceClass implements OnInit {
 
   ngOnDestroy() {
     super.destroy();
+  }
+
+  showPlaceModalPage() {
+    this.navCtrl.push(PlaceModalPage, {
+      place_id: this.place_id
+    });
+    // let placeModalPage = this.modalCtrl.create(PlaceModalPage, {place_id: this.place_id});
+    // placeModalPage.present();
   }
 }
