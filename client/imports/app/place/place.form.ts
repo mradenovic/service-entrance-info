@@ -2,15 +2,15 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { MeteorObservable } from 'meteor-rxjs';
 
-import template from './place.modal.component.html'
+import template from './place.form.html'
 
-import { PlaceClass } from './place.class';
+import { PlaceData } from './place.data';
 
 @Component({
   selector: 'place-modal-component',
   template: template,
 })
-export class PlaceModalComponent  extends PlaceClass implements OnInit {
+export class PlaceForm  extends PlaceData implements OnInit {
   @Input() place_id: any;
 
   constructor(public navCtrl: NavController) {

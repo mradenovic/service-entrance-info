@@ -2,7 +2,7 @@ import { Component, NgZone } from '@angular/core';
 import {MapsAPILoader} from 'angular2-google-maps/core';
 import { MeteorObservable } from 'meteor-rxjs';
 import { NavController, NavParams } from 'ionic-angular';
-import { PlacePage } from '../place/place.page'
+import { PlaceViewPage } from '../place/place.view.page'
 
 import template from './search.component.html'
 
@@ -60,7 +60,7 @@ export class SearchComponent  {
   }
 
   goToPlace(google_place) {
-    this.navCtrl.push(PlacePage, {
+    this.navCtrl.push(PlaceViewPage, {
       place_id: google_place.place_id
     });
   }

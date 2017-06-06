@@ -6,10 +6,10 @@ import { IonicModule } from 'ionic-angular';
 import { ServiceEntranceModule } from '../service-entrance/service-entrance.module';
 import { MapModule } from '../map/map.module';
 
-import { PlacePage } from './place.page';
-import { PlaceModalPage } from './place.modal.page';
-import { PlaceComponent } from './place.component';
-import { PlaceModalComponent } from './place.modal.component';
+import { PlaceViewPage } from './place.view.page';
+import { PlaceFormPage } from './place.form.page';
+import { PlaceView } from './place.view';
+import { PlaceForm } from './place.form';
 
 @NgModule({
   imports: [
@@ -20,22 +20,22 @@ import { PlaceModalComponent } from './place.modal.component';
     MapModule,
   ],
   declarations: [
-    PlacePage,
-    PlaceModalPage,
-    PlaceComponent,
-    PlaceModalComponent,
+    PlaceViewPage,
+    PlaceFormPage,
+    PlaceView,
+    PlaceForm,
   ],
   exports: [
-    PlacePage,
-    PlaceModalPage,
-    PlaceComponent,
-    PlaceModalComponent,
+    PlaceViewPage,
+    PlaceFormPage,
+    PlaceView,
+    PlaceForm,
   ],
   entryComponents: [
-    PlacePage,
-    PlaceModalPage,
-    PlaceComponent,
-    PlaceModalComponent,
+    PlaceViewPage,
+    PlaceFormPage,
+    PlaceView,
+    PlaceForm,
   ]
 })
 export class PlaceModule {}

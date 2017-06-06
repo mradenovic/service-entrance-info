@@ -6,7 +6,7 @@ import { Places } from '../../../../both/collections/places.collection'
 import { Place } from '../../../../both/models/place.model'
 import { ServiceEntrances } from '../../../../both/collections/service-entrances.collection'
 
-export class PlaceClass {
+export class PlaceData {
   place: Place;
   serviceEntrance: any;
   placeSubscription: Subscription;

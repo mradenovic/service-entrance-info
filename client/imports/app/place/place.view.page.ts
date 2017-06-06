@@ -1,14 +1,14 @@
 import { Component, NgZone } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import template from './place.page.html'
+import template from './place.view.page.html'
 
 
 @Component({
-  selector: 'place-page',
+  selector: 'place-view-page',
   template: template,
 })
-export class PlacePage  {
+export class PlaceViewPage  {
   place_id: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

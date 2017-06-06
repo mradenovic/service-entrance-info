@@ -1,16 +1,16 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 
-import template from './place.component.html'
+import template from './place.view.html'
 
-import { PlaceClass } from './place.class';
-import { PlaceModalPage } from './place.modal.page';
+import { PlaceData } from './place.data';
+import { PlaceFormPage } from './place.form.page';
 
 @Component({
   selector: 'place-component',
   template: template,
 })
-export class PlaceComponent  extends PlaceClass implements OnInit {
+export class PlaceView  extends PlaceData implements OnInit {
   @Input() place_id: any;
 
   constructor(public modalCtrl: ModalController, public navCtrl: NavController) {
@@ -26,7 +26,7 @@ export class PlaceComponent  extends PlaceClass implements OnInit {
   }
 
   showPlaceModalPage() {
-    this.navCtrl.push(PlaceModalPage, {
+    this.navCtrl.push(PlaceFormPage, {
       place_id: this.place_id
     });
     // let placeModalPage = this.modalCtrl.create(PlaceModalPage, {place_id: this.place_id});
