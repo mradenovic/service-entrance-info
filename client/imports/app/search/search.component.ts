@@ -47,6 +47,11 @@ export class SearchComponent  {
     }, (error) => {
       console.log(`Failed to invite due to ${error}`);
     });
+    MeteorObservable.call('service_entrance.init', place.place_id).subscribe((response) => {
+      console.log('service_entrane.init.sucess', response);
+    }, (error) => {
+      console.log(`Failed to invite due to ${error}`);
+    });
   }
 
   getPlace(google_place): Place {
