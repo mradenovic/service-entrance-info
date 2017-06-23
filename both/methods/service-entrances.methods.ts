@@ -19,7 +19,8 @@ Meteor.methods({
           'type': se.type,
           'long_push': se.long_push,
           'note': se.note,
-          'restriction': se.restriction
+          'restriction': se.restriction,
+          'elevator': se.elevator,
         }
       },
       { upsert: true }

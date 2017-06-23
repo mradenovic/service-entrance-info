@@ -1,0 +1,29 @@
+<ion-item-divider>
+  <ion-icon name="time"></ion-icon>
+  Elevator
+  <button *ngIf="!se.elevator"ion-button item-right clear (click)="init()">
+    <ion-icon name="add-circle"></ion-icon>
+  </button>
+  <button *ngIf="se.elevator"ion-button item-right clear color="danger" (click)="delete()">
+    <ion-icon name="remove-circle"></ion-icon>
+  </button>
+</ion-item-divider>
+
+
+<!-- coi_is_required -->
+<ion-item *ngIf="se.elevator">
+  <ion-label>Dedicated</ion-label>
+  <ion-checkbox name="is_dedicated" [(ngModel)]="se.elevator.is_dedicated"></ion-checkbox>
+</ion-item>
+
+<ion-item *ngIf="se.elevator">
+  <ion-label>Self Operated</ion-label>
+  <ion-checkbox name="is_self_operated" [(ngModel)]="se.elevator.is_self_operated"></ion-checkbox>
+</ion-item>
+
+<ion-item *ngIf="se.elevator">
+  <ion-range min="0" max="10" step="1" snaps="true"[(ngModel)]="se.elevator.size" color="secondary">
+    <ion-label range-left>fits</ion-label>
+    <ion-label range-right>{{se.elevator.size}} dollies</ion-label>
+  </ion-range>
+</ion-item>

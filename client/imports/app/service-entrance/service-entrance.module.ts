@@ -8,6 +8,7 @@ import { ServiceEntranceData } from './service.entrance.data'
 import { ServiceEntranceView } from './service.entrance.view'
 import { ServiceEntranceForm } from './service.entrance.form'
 import { RestrictionField } from './restriction.field'
+import { ElevatorField } from './elevator.field'
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { RestrictionField } from './restriction.field'
     ServiceEntranceView,
     ServiceEntranceForm,
     RestrictionField,
+    ElevatorField,
   ],
   exports: [
     ServiceEntranceView,

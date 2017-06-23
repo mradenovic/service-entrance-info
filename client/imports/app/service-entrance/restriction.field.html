@@ -1,14 +1,16 @@
 <ion-item-divider>
   <ion-icon name="time"></ion-icon>
   Time Restriction
+  <button *ngIf="!se.restriction"ion-button item-right clear (click)="init()">
+    <ion-icon name="add-circle"></ion-icon>
+  </button>
+  <button *ngIf="se.restriction"ion-button item-right clear color="danger" (click)="delete()">
+    <ion-icon name="remove-circle"></ion-icon>
+  </button>
 </ion-item-divider>
 
-<ion-item *ngIf="!se.restriction">
-  <button ion-button full (click)="init()">Restriction</button>
-</ion-item>
-
 <!-- <ion-item> -->
-  <ion-grid item-content>
+  <ion-grid item-content *ngIf="se.restriction">
   <ion-row>
     <ion-col>
         <ion-label>Mon</ion-label>
@@ -42,7 +44,7 @@
 </ion-grid>
 <!-- </ion-item> -->
 
-<ion-row>
+<ion-row *ngIf="se.restriction">
   <ion-col>
     <ion-item>
       <ion-label>From</ion-label>

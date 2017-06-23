@@ -9,6 +9,10 @@ import template from './restriction.field.html'
 export class RestrictionField {
   @Input() se: any;
 
+  delete() {
+    this.se.restriction = null;
+  }
+
   init() {
     this.se.restriction = {
       days: {
@@ -21,8 +25,8 @@ export class RestrictionField {
         sun: false
       },
       times: {
-        from: null,
-        to: null
+        from: '09:00',
+        to: '17:00'
       }
     }
   }
