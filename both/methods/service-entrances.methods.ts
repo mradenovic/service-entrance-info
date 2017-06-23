@@ -26,3 +26,17 @@ Meteor.methods({
     );
   }
 });
+
+Meteor.methods({
+  'service_entrance.init': (place_id: string) => {
+    ServiceEntrances.collection.update(
+      { place_ids: [place_id], created_by: Meteor.userId() },
+      {
+        $setOnInsert: {
+          created_at: new Date()
+        }
+      },
+      { upsert: true }
+    );
+  }
+});
