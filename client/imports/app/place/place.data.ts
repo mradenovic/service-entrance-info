@@ -18,9 +18,12 @@ export class PlaceData {
         this.place = Places.findOne({place_id: place_id});
       })
     });
+    let query = {
+      place_ids: [place_id]
+    }
     this.serviceEntranceSubscription = MeteorObservable.subscribe('service_entrance', place_id).subscribe(() => {
       MeteorObservable.autorun().subscribe(() => {
-        this.serviceEntrance = ServiceEntrances.findOne({place_ids: place_id});
+        this.serviceEntrance = ServiceEntrances.findOne(query);
       })
     });
   }
