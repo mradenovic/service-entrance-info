@@ -1,0 +1,37 @@
+<ion-item-divider>
+    <ion-label><ion-icon name="settings"></ion-icon> General</ion-label>
+</ion-item-divider>
+
+
+<!-- check_in -->
+<ion-item>
+  <ion-label><ion-icon name="checkmark"></ion-icon> Check in</ion-label>
+  <ion-select [(ngModel)]="se.check_in">
+    <ion-option value="Front Desk">Front Desk</ion-option>
+    <ion-option value="Service Entrance">Service Entrance</ion-option>
+    <ion-option value="None">None</ion-option>
+  </ion-select>
+</ion-item>
+
+<!-- type -->
+<ion-item>
+  <ion-label><ion-icon name="compass"></ion-icon> Type</ion-label>
+  <ion-select [(ngModel)]="se.type">
+    <ion-option value="Rapm to the basement">Rapm to the basement</ion-option>
+    <ion-option value="Ramp to the first floor">Ramp to the first floor</ion-option>
+    <ion-option value="Stairs to the basement">Stairs to the basement</ion-option>
+    <ion-option value="Stairs to the first floor">Stairs to the first floor</ion-option>
+  </ion-select>
+</ion-item>
+
+<!-- long_push -->
+<ion-item>
+  <ion-label for="long_push" class="control-ion-label"><ion-icon name="code"></ion-icon> Long push in ft</ion-label>
+  <ion-input type="number" name="long_push" min="0" placeholder="i.e 150" [(ngModel)]=se.long_push></ion-input>
+</ion-item>
+
+<!-- note -->
+<ion-item>
+  <ion-label for="note" class="control-ion-label"><ion-icon name="create"></ion-icon> Note</ion-label>
+  <ion-textarea class="form-control" name="note" rows="3" [(ngModel)]=se.note></ion-textarea>
+</ion-item>

@@ -9,11 +9,20 @@ import template from './restriction.field.html'
 export class RestrictionField {
   @Input() se: any;
 
-  delete() {
+
+    toggleRestriction($event) {
+      if (this.se.has_restriction) {
+        this.initRestriction();
+      } else {
+        this.deleteRestriction();
+      }
+    }
+
+  deleteRestriction() {
     this.se.restriction = null;
   }
 
-  init() {
+  initRestriction() {
     this.se.restriction = {
       days: {
         mon: true,

@@ -1,13 +1,8 @@
 <ion-item-divider>
-  <ion-icon name="time"></ion-icon>
-  Time Restriction
-  <button *ngIf="!se.restriction"ion-button item-right clear (click)="init()">
-    <ion-icon name="add-circle"></ion-icon>
-  </button>
-  <button *ngIf="se.restriction"ion-button item-right clear color="danger" (click)="delete()">
-    <ion-icon name="remove-circle"></ion-icon>
-  </button>
+    <ion-label><ion-icon name="time"></ion-icon> Time Restriction</ion-label>
+    <ion-toggle name="has_restriction" [(ngModel)]=se.has_restriction (ngModelChange)="toggleRestriction(event)"></ion-toggle>
 </ion-item-divider>
+
 
 <!-- <ion-item> -->
   <ion-grid item-content *ngIf="se.restriction">

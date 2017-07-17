@@ -1,46 +1,14 @@
 <ion-list *ngIf="se">
+  <!-- General -->
+  <general-field [se]="se"></general-field>
+
+  <!-- COI -->
+  <coi-field [se]="se"></coi-field>
+
   <!-- restriction -->
   <restriction-field [se]="se"></restriction-field>
 
   <!-- elevator -->
   <elevator-field [se]="se"></elevator-field>
 
-    <!-- coi_is_required -->
-    <ion-item>
-      <ion-label>COI is required</ion-label>
-      <ion-checkbox name="coi_is_required" [(ngModel)]="se.coi_is_required"></ion-checkbox>
-    </ion-item>
-
-    <!-- check_in -->
-    <ion-item>
-      <ion-label>Check in</ion-label>
-      <ion-select [(ngModel)]="se.check_in">
-        <ion-option value="Front Desk">Front Desk</ion-option>
-        <ion-option value="Service Entrance">Service Entrance</ion-option>
-        <ion-option value="None">None</ion-option>
-      </ion-select>
-    </ion-item>
-
-    <!-- type -->
-    <ion-item>
-      <ion-label>Type</ion-label>
-      <ion-select [(ngModel)]="se.type">
-        <ion-option value="Rapm to the basement">Rapm to the basement</ion-option>
-        <ion-option value="Ramp to the first floor">Ramp to the first floor</ion-option>
-        <ion-option value="Stairs to the basement">Stairs to the basement</ion-option>
-        <ion-option value="Stairs to the first floor">Stairs to the first floor</ion-option>
-      </ion-select>
-    </ion-item>
-
-    <!-- long_push -->
-    <ion-item>
-      <ion-label for="long_push" class="control-ion-label">Long push in ft</ion-label>
-      <ion-input type="number" name="long_push" min="0" placeholder="i.e 150" [(ngModel)]=se.long_push></ion-input>
-    </ion-item>
-
-    <!-- note -->
-    <ion-item>
-      <ion-label for="note" class="control-ion-label">Note</ion-label>
-      <ion-textarea class="form-control" name="note" rows="3" [(ngModel)]=se.note></ion-textarea>
-    </ion-item>
 </ion-list>

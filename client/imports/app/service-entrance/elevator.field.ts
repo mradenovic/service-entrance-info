@@ -9,11 +9,20 @@ import template from './elevator.field.html'
 export class ElevatorField {
   @Input() se: any;
 
-  delete() {
+  toggleElevator($event) {
+    console.log('toggle clicked: $event', $event)
+    if (this.se.has_elevator) {
+      this.initElevator();
+    } else {
+      this.deleteElevator();
+    }
+  }
+
+  deleteElevator() {
     this.se.elevator = null;
   }
 
-  init() {
+  initElevator() {
     this.se.elevator = {
       is_dedicated: false,
       is_self_operated: false,
