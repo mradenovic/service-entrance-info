@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { ServiceEntrances } from '../collections/service-entrances.collection'
 import { ServiceEntrance } from '../models/service-entrance.model'
+import { DefaultInfo } from '../models/service-entrance.default'
 
 Meteor.methods({
   'service_entrance.upsert': (se: ServiceEntrance, place_id: string) => {
@@ -35,9 +36,7 @@ Meteor.methods({
     ServiceEntrances.collection.update(
       { place_ids: [place_id], created_by: Meteor.userId() },
       {
-        $setOnInsert: {
-          created_at: new Date()
-        }
+        $setOnInsert: new DefaultInfo()
       },
       { upsert: true }
     );
