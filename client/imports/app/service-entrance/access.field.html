@@ -1,0 +1,68 @@
+
+<ion-item-divider>
+  <ion-label><ion-icon name="information-circle"></ion-icon> Access</ion-label>
+</ion-item-divider>
+
+<!-- check_in -->
+<ion-item *ngIf="access">
+  <ion-label>Check in</ion-label>
+  <ion-select [(ngModel)]="access.check_in">
+    <ion-option value="Front Desk">Front Desk</ion-option>
+    <ion-option value="Service Entrance">Service Entrance</ion-option>
+    <ion-option value="None">None</ion-option>
+  </ion-select>
+</ion-item>
+
+<!-- Level -->
+<ion-item *ngIf="access">
+  <ion-label>Level</ion-label>
+  <ion-select [(ngModel)]="access.level">
+    <ion-option value="B">B - Basement</ion-option>
+    <ion-option value="C">C - Basement</ion-option>
+    <ion-option value="L">L - 1st Floor</ion-option>
+    <ion-option value="1">1 - 1st Floor</ion-option>
+    <ion-option value="2">2 - 2nd Floor</ion-option>
+  </ion-select>
+</ion-item>
+
+<!-- Loading dock -->
+<ion-item *ngIf="access">
+  <ion-label>Loading Dock</ion-label>
+  <ion-toggle name="has_loading_dock" [(ngModel)]="access.has_loading_dock"></ion-toggle>
+</ion-item>
+
+<!-- Stairs -->
+<ion-item *ngIf="access">
+  <ion-label>Stairs</ion-label>
+  <ion-toggle name="has_stairs" [(ngModel)]="access.has_stairs"></ion-toggle>
+</ion-item>
+
+<!-- Ramp -->
+<ion-item *ngIf="access">
+  <ion-label>Ramp</ion-label>
+  <ion-toggle name="has_ramp" [(ngModel)]="access.has_ramp"></ion-toggle>
+</ion-item>
+
+<!-- Elevator -->
+<ion-item *ngIf="access">
+  <ion-label>Elevator</ion-label>
+  <ion-toggle name="has_elevator" [(ngModel)]="access.has_elevator"></ion-toggle>
+</ion-item>
+
+<!-- Outside -->
+<ion-item *ngIf="access">
+  <ion-label>Outside</ion-label>
+  <ion-toggle name="is_outside" [(ngModel)]="access.is_outside"></ion-toggle>
+</ion-item>
+
+<!-- Long push -->
+<ion-item *ngIf="access">
+  <ion-label for="long_push" class="control-ion-label">Long push (ft)</ion-label>
+  <ion-input type="number" name="long_push" min="0" placeholder="i.e 150" [(ngModel)]=access.long_push></ion-input>
+</ion-item>
+
+<!-- Note -->
+<ion-item *ngIf="access">
+  <ion-label for="note" class="control-ion-label">Note</ion-label>
+  <ion-textarea class="form-control" name="note" rows="3" [(ngModel)]=access.note></ion-textarea>
+</ion-item>

@@ -11,6 +11,7 @@ import { RestrictionField } from './restriction.field'
 import { ElevatorField } from './elevator.field'
 import { COIField } from './coi.field'
 import { GeneralField } from './general.field'
+import { AccessField } from './access.field'
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { GeneralField } from './general.field'
     ElevatorField,
     COIField,
     GeneralField,
+    AccessField,
   ],
   exports: [
     ServiceEntranceView,
