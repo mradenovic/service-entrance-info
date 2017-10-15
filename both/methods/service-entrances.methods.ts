@@ -5,26 +5,17 @@ import { DefaultInfo } from '../models/service-entrance.default'
 
 Meteor.methods({
   'service_entrance.upsert': (se: ServiceEntrance, place_id: string) => {
+    se.updated_at = new Date();
+    delete se.created_at;
+    delete se.created_by;
+    delete se._id;
     ServiceEntrances.collection.update(
       { place_ids: [place_id], created_by: Meteor.userId() },
       {
         $setOnInsert: {
           created_at: new Date()
         },
-        $set: {
-          updated_at: new Date(),
-          'location.lat': se.location.lat,
-          'location.lng': se.location.lng,
-          'coi_is_required': se.coi_is_required,
-          'check_in': se.check_in,
-          'type': se.type,
-          'long_push': se.long_push,
-          'note': se.note,
-          'has_restriction': se.has_restriction,
-          'restriction': se.restriction,
-          'has_elevator': se.has_elevator,
-          'elevator': se.elevator,
-        }
+        $set: se
       },
       { upsert: true }
     );
