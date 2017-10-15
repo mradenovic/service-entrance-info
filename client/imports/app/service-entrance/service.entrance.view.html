@@ -9,16 +9,23 @@
   <ion-row>
     <ion-col>
       <span *ngIf="se.coi_is_required"><strong>COI</strong> is required;</span>
-      <span *ngIf="se.check_in">Check in at <strong>{{se.check_in}}</strong>;</span>
     </ion-col>
   </ion-row>
 
+  <!-- Access -->
   <ion-row>
     <ion-col *ngIf="se">
-      <strong>Service entrance</strong>
+      <strong>Access includes</strong>
       <span *ngIf="se.location && se.location.description">{{se.location.description}};</span>
-      <span>{{se.type}};</span>
-      <span *ngIf="se.long_push">long push <ion-badge>{{se.long_push}}</ion-badge> ft;</span>
+      <span *ngIf="se.access.check_in">Check in at <strong>{{se.access.check_in}}</strong>;</span>
+      <span *ngIf="se.access.level">Access at level <strong>{{se.access.level}}</strong>;</span>
+      <span *ngIf="se.access.has_loading_dock">Loading dock;</span>
+      <span *ngIf="se.access.has_stairs">Stairs;</span>
+      <span *ngIf="se.access.has_ramp">Ramp;</span>
+      <span *ngIf="se.access.has_elevator">Elevator;</span>
+      <span *ngIf="se.access.is_outside">Outside;</span>
+      <span *ngIf="se.access.long_push">long push <ion-badge>{{se.access.long_push}}</ion-badge> ft;</span>
+      <span *ngIf="se.access.note">Note: {{se.access.note}};</span>
     </ion-col>
   </ion-row>
 
