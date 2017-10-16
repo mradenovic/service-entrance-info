@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { ToastController, NavController, NavParams } from 'ionic-angular';
 import { MeteorObservable } from 'meteor-rxjs';
 
 import template from './place.form.html'
@@ -13,7 +13,7 @@ import { PlaceData } from './place.data';
 export class PlaceForm  extends PlaceData implements OnInit {
   @Input() place_id: any;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public toastCtrl: ToastController, public navCtrl: NavController) {
     super();
   }
 
@@ -27,14 +27,23 @@ export class PlaceForm  extends PlaceData implements OnInit {
 
   upsertServiceEntrance() {
     MeteorObservable.call('service_entrance.upsert', this.serviceEntrance, this.place.place_id).subscribe((response) => {
-      console.log('service-entrance.upsert.sucess', response);
+      this.presentToast('Data sucsessfuly saved!');
       this.goBack();
     }, (error) => {
-      console.log(`Failed to upsert due to ${error}`);
+      this.presentToast(error);
     });
   }
 
   goBack() {
     this.navCtrl.pop();
+  }
+
+  presentToast(msg: string) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 2000,
+      position: 'middle'
+    });
+    toast.present();
   }
 }
