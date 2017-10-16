@@ -5,6 +5,13 @@ import { DefaultInfo } from '../models/service-entrance.default'
 
 Meteor.methods({
   'service_entrance.upsert': (se: ServiceEntrance, place_id: string) => {
+    
+    // Make sure the user is logged in before updating info
+    if (!Meteor.userId()) {
+      throw new Meteor.Error('not-authorized',
+        'User must be logged in to edit data');
+    }
+
     se.updated_at = new Date();
     delete se.created_at;
     delete se.created_by;
