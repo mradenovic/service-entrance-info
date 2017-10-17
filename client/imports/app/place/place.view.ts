@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 
@@ -5,6 +6,7 @@ import template from './place.view.html';
 
 import { PlaceData } from './place.data';
 import { PlaceFormPage } from './place.form.page';
+import { BlazeLoginButtonsPage } from '../blaze-login-buttons/blaze-login-buttons.page';
 
 @Component({
   selector: 'place-component',
@@ -26,10 +28,14 @@ export class PlaceView  extends PlaceData implements OnInit {
   }
 
   showPlaceModalPage() {
-    this.navCtrl.push(PlaceFormPage, {
-      place_id: this.place_id
-    });
-    // let placeModalPage = this.modalCtrl.create(PlaceModalPage, {place_id: this.place_id});
-    // placeModalPage.present();
+    if (!Meteor.userId()) {
+      const profileModal = this.modalCtrl.create(BlazeLoginButtonsPage, {  });
+      profileModal.present();
+    }
+    if (Meteor.userId()) {
+      this.navCtrl.push(PlaceFormPage, {
+        place_id: this.place_id
+      });
+    }
   }
 }
