@@ -2,7 +2,7 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { ToastController, NavController, NavParams } from 'ionic-angular';
 import { MeteorObservable } from 'meteor-rxjs';
 
-import template from './place.form.html'
+import template from './place.form.html';
 
 import { PlaceData } from './place.data';
 

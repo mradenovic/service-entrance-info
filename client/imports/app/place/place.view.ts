@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 
-import template from './place.view.html'
+import template from './place.view.html';
 
 import { PlaceData } from './place.data';
 import { PlaceFormPage } from './place.form.page';

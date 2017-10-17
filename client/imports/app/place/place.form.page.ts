@@ -1,7 +1,7 @@
 import { Component, NgZone } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
 
-import template from './place.form.page.html'
+import template from './place.form.page.html';
 
 
 @Component({
