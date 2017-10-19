@@ -1,6 +1,6 @@
 import { Component, NgZone } from '@angular/core';
 
-import template from './search.page.html'
+import template from './search.page.html';
 
 
 @Component({

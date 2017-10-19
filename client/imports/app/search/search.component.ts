@@ -2,12 +2,12 @@ import { Component, NgZone } from '@angular/core';
 import {MapsAPILoader} from 'angular2-google-maps/core';
 import { MeteorObservable } from 'meteor-rxjs';
 import { NavController, NavParams } from 'ionic-angular';
-import { PlaceViewPage } from '../place/place.view.page'
+import { PlaceViewPage } from '../place/place.view.page';
 
-import template from './search.component.html'
+import template from './search.component.html';
 
-import { Places } from '../../../../both/collections/places.collection'
-import { Place } from '../../../../both/models/place.model'
+import { Places } from '../../../../both/collections/places.collection';
+import { Place } from '../../../../both/models/place.model';
 
 declare var google: any;
 
@@ -34,7 +34,7 @@ export class SearchComponent  {
         this.zone.run(() => {
           let google_place = autocomplete.getPlace();
           this.upsertPlace(google_place);
-          this.goToPlace(google_place)
+          this.goToPlace(google_place);
         })
       });
     });
