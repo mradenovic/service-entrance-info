@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 
-import template from './map.component.html'
-import style from './map.component.scss'
+import template from './map.component.html';
+import style from './map.component.scss';
 
 @Component({
   selector: 'google-map',
@@ -24,7 +24,7 @@ export class MapComponent implements OnChanges {
 
   onMapClick($event) {
     if (this.action == 'edit' && !this.serviceEntrance.location) {
-      this.serviceEntrance.location = {}
+      this.serviceEntrance.location = {};
       this.updateServiceEntranceLocation($event.coords);
     }
   }
