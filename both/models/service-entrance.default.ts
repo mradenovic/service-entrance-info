@@ -1,4 +1,6 @@
-export class DefaultInfo {
+import { ServiceEntrance } from '../models/service-entrance.model'
+
+export class DefaultInfo extends ServiceEntrance {
 
   constructor() {
     this.created_at = new Date();
