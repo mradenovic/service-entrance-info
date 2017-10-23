@@ -20,7 +20,6 @@ export class AccessField {
   }
 
   initAccess() {
-    console.log('initAccess')
     this.access = {
       check_in_required: true,
       check_in_at_front_desk: true,
