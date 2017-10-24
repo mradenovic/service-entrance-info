@@ -9,7 +9,7 @@ import { ServiceEntranceView } from './service.entrance.view'
 import { ServiceEntranceForm } from './service.entrance.form'
 import { RestrictionField } from './restriction.field'
 import { ElevatorField } from './elevator.field'
-import { COIField } from './coi.field'
+import { COIComponent } from './coi/coi.component'
 import { AccessComponent } from './access/access.component'
 
 @NgModule({
@@ -23,7 +23,7 @@ import { AccessComponent } from './access/access.component'
     ServiceEntranceForm,
     RestrictionField,
     ElevatorField,
-    COIField,
+    COIComponent,
     AccessComponent,
   ],
   exports: [

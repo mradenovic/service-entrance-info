@@ -1,6 +1,6 @@
 import { ServiceEntrance } from '../models/service-entrance.model'
 
-export class DefaultInfo extends ServiceEntrance {
+export class DefaultInfo implements ServiceEntrance {
 
   constructor() {
     this.created_at = new Date();
@@ -13,6 +13,9 @@ export class DefaultInfo extends ServiceEntrance {
       has_elevator: false,
       is_outside: false,
       long_push: 0,
+    };
+    this.coi = {
+      is_required: false
     };
   }
 }
