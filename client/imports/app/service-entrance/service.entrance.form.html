@@ -1,6 +1,6 @@
 <ion-list *ngIf="se">
   <!-- Access -->
-  <access-field *ngIf="se.access" [access]="se.access"></access-field>
+  <access-component *ngIf="se.access" [access]="se.access"></access-component>
 
   <!-- COI -->
   <coi-field [se]="se"></coi-field>

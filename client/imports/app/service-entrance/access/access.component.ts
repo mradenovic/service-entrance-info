@@ -1,12 +1,12 @@
 import { Component, Input} from '@angular/core';
 
-import template from './access.field.html'
+import template from './access.component.html'
 
 @Component({
-  selector: 'access-field',
+  selector: 'access-component',
   template: template,
 })
-export class AccessField {
+export class AccessComponent {
   @Input() access: any;
 
   ngOnInit() {
