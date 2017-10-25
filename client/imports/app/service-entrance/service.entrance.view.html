@@ -30,7 +30,7 @@
   </ion-row>
 
   <ion-row>
-    <ion-col *ngIf="se.elevator">
+    <ion-col *ngIf="se.elevator.is_available">
       <strong>Elevator</strong>
       <span *ngIf="se.elevator.is_dedicated"><span class="badge">dedicated;</span></span>
       <span *ngIf="!se.elevator.is_dedicated"><span class="bg-warning" >shared;</span></span>

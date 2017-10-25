@@ -1,0 +1,22 @@
+<ion-item-divider>
+  <ion-label><ion-icon name="arrow-up"></ion-icon> Elevator</ion-label>
+  <ion-toggle name="is_available" [(ngModel)]=elevator.is_available (ngModelChange)="toggleElevator($event)"></ion-toggle>
+</ion-item-divider>
+
+<!-- TODO Remove redundant code after deciding to hide or disable componens -->
+<ion-item *ngIf="elevator.is_available">
+  <ion-label>Dedicated</ion-label>
+  <ion-toggle disabled='{{!elevator.is_available}}' name="is_dedicated" [(ngModel)]="elevator.is_dedicated"></ion-toggle>
+</ion-item>
+
+<ion-item *ngIf="elevator.is_available">
+  <ion-label>Self Operated</ion-label>
+  <ion-toggle disabled='{{!elevator.is_available}}' name="is_self_operated" [(ngModel)]="elevator.is_self_operated"></ion-toggle>
+</ion-item>
+
+<ion-item *ngIf="elevator.is_available">
+  <ion-range disabled='{{!elevator.is_available}}' min="0" max="10" step="1" snaps="true"[(ngModel)]="elevator.size" color="secondary">
+    <ion-label range-left>Fits</ion-label>
+    <ion-label range-right>{{elevator.size}} dollies</ion-label>
+  </ion-range>
+</ion-item>

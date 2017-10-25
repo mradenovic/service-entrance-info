@@ -17,5 +17,8 @@ export class DefaultInfo implements ServiceEntrance {
     this.coi = {
       is_required: false
     };
+    this.elevator = {
+      is_available: false
+    }
   }
 }

@@ -8,7 +8,7 @@ import { ServiceEntranceData } from './service.entrance.data'
 import { ServiceEntranceView } from './service.entrance.view'
 import { ServiceEntranceForm } from './service.entrance.form'
 import { RestrictionField } from './restriction.field'
-import { ElevatorField } from './elevator.field'
+import { ElevatorComponent } from './elevator/elevator.component'
 import { COIComponent } from './coi/coi.component'
 import { AccessComponent } from './access/access.component'
 
@@ -22,7 +22,7 @@ import { AccessComponent } from './access/access.component'
     ServiceEntranceView,
     ServiceEntranceForm,
     RestrictionField,
-    ElevatorField,
+    ElevatorComponent,
     COIComponent,
     AccessComponent,
   ],
