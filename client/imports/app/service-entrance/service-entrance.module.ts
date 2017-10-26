@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { ServiceEntranceData } from './service.entrance.data'
 import { ServiceEntranceView } from './service.entrance.view'
 import { ServiceEntranceForm } from './service.entrance.form'
-import { RestrictionField } from './restriction.field'
+import { RestrictionComponent } from './restriction/restriction.component'
 import { ElevatorComponent } from './elevator/elevator.component'
 import { COIComponent } from './coi/coi.component'
 import { AccessComponent } from './access/access.component'
@@ -21,7 +21,7 @@ import { AccessComponent } from './access/access.component'
   declarations: [
     ServiceEntranceView,
     ServiceEntranceForm,
-    RestrictionField,
+    RestrictionComponent,
     ElevatorComponent,
     COIComponent,
     AccessComponent,

@@ -41,7 +41,7 @@
   </ion-row>
 
   <ion-row>
-    <ion-col *ngIf="se.restriction">
+    <ion-col *ngIf="se.restriction.exists">
       <strong>Restriction</strong>
       <ion-badge color="dark" *ngIf="se.restriction.days.mon">M</ion-badge>
       <ion-badge color="dark" *ngIf="se.restriction.days.tue">T</ion-badge>

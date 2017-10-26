@@ -1,0 +1,55 @@
+<ion-item-divider>
+    <ion-label><ion-icon name="time"></ion-icon> Time Restriction</ion-label>
+    <ion-toggle name="exists" [(ngModel)]=restriction.exists (ngModelChange)="toggleRestriction(event)"></ion-toggle>
+</ion-item-divider>
+
+
+<!-- <ion-item> -->
+  <ion-grid item-content *ngIf="restriction.exists">
+  <ion-row>
+    <ion-col>
+        <ion-label>Mon</ion-label>
+        <ion-checkbox [(ngModel)]="restriction.days.mon">
+    </ion-col>
+    <ion-col>
+        <ion-label>Tue</ion-label>
+        <ion-checkbox [(ngModel)]="restriction.days.tue">
+    </ion-col>
+    <ion-col>
+        <ion-label>Wed</ion-label>
+        <ion-checkbox [(ngModel)]="restriction.days.wed">
+    </ion-col>
+    <ion-col>
+        <ion-label>Thu</ion-label>
+        <ion-checkbox [(ngModel)]="restriction.days.thu">
+    </ion-col>
+    <ion-col>
+        <ion-label>Fri</ion-label>
+        <ion-checkbox [(ngModel)]="restriction.days.fri">
+    </ion-col>
+    <ion-col>
+        <ion-label>Sat</ion-label>
+        <ion-checkbox [(ngModel)]="restriction.days.sat">
+    </ion-col>
+    <ion-col>
+        <ion-label>Sun</ion-label>
+        <ion-checkbox [(ngModel)]="restriction.days.sun">
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<!-- </ion-item> -->
+
+<ion-row *ngIf="restriction.exists">
+  <ion-col>
+    <ion-item>
+      <ion-label>From</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="restriction.times.from"></ion-datetime>
+    </ion-item>
+  </ion-col>
+  <ion-col>
+    <ion-item>
+      <ion-label>To</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="restriction.times.to"></ion-datetime>
+    </ion-item>
+  </ion-col>
+</ion-row>

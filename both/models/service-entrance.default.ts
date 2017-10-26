@@ -19,6 +19,22 @@ export class DefaultInfo implements ServiceEntrance {
     };
     this.elevator = {
       is_available: false
-    }
+    };
+    this.restriction = {
+      exists: false,
+      days: {
+        mon: true,
+        tue: true,
+        wed: true,
+        thu: true,
+        fri: true,
+        sat: false,
+        sun: false
+      },
+      times: {
+        from: '09:00',
+        to: '17:00'
+      }
+    };
   }
 }
