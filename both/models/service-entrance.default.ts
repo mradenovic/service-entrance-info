@@ -1,6 +1,10 @@
-import { ServiceEntrance } from '../models/service-entrance.model'
-
-export class DefaultInfo implements ServiceEntrance {
+// TOD find better way to initialize data
+export class DefaultInfo {
+  created_at: any;
+  access: any;
+  coi: any;
+  elevator: any;
+  restriction: any;
 
   constructor() {
     this.created_at = new Date();
