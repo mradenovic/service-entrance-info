@@ -1,6 +1,6 @@
 ---
-layout: page
-title: ""
+layout: document
+title: Privacy Policy
 permalink: /privacy-policy/
 ---
 

@@ -1,6 +1,6 @@
 ---
-layout: page
-title: ""
+layout: document
+title: "Terms of Service"
 permalink: /terms-of-service/
 ---
 # Service Entrance Info Terms of Service
@@ -37,7 +37,7 @@ You must not use this website in any way that causes, or may cause, damage to th
 
 You must not use this website to copy, store, host, transmit, send, use, publish or distribute any material which consists of (or is linked to) any spyware, computer virus, Trojan horse, worm, keystroke logger, rootkit or other malicious computer software.
 
-You must not conduct any systematic or automated data collection activities on or in relation to this website without serviceentrance.info's express written consent.  
+You must not conduct any systematic or automated data collection activities on or in relation to this website without serviceentrance.info's express written consent.
 This includes:
 
 *   scraping

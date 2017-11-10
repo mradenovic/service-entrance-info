@@ -5,4 +5,5 @@
 layout: blog
 title: Blog
 permalink: /blog/
+navlink: true
 ---
