@@ -10,6 +10,10 @@ If you require any more information or have any questions about our privacy poli
 
 At serviceentrance.info we consider the privacy of our visitors to be extremely important. This privacy policy document describes in detail the types of personal information is collected and recorded by serviceentrance.info and how we use it.
 
+**Google Privacy Policy**
+We are using the Google Maps API(s) which has it's own [Google Privacy Policy](https://www.google.com/policies/privacy/).
+
+
 **Log Files**
 Like many other Web sites, serviceentrance.info makes use of log files. These files merely logs visitors to the site - usually a standard procedure for hosting companies and a part of hosting services's analytics. The information inside the log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date/time stamp, referring/exit pages, and possibly the number of clicks. This information is used to analyze trends, administer the site, track user's movement around the site, and gather demographic information. IP addresses, and other such information are not linked to any information that is personally identifiable.
 
