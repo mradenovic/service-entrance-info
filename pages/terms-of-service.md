@@ -13,6 +13,10 @@ These terms and conditions govern your use of this website; by using this websit
 
 You must be at least 18 [eighteen] years of age to use this website. By using this website and by agreeing to these terms and conditions, you warrant and represent that you are at least 18 years of age.
 
+## Google's Terms of Service
+
+By using serviceentrance.info, You are also bound by [Google’s Terms of Service](https://www.google.com/intl/en/policies/terms/).
+
 ## License to use website
 
 Unless otherwise stated, serviceentrance.info and/or its licensors own the intellectual property rights published on this website and materials used on serviceentrance.info. Subject to the license below, all these intellectual property rights are reserved.
