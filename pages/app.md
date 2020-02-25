@@ -3,7 +3,7 @@ layout: page
 title: App
 permalink: /app/
 navlink: true
-redirect_url: "http://app.serviceentrance.info"
+redirect_url: "https://service-entrance.anvil.app/"
 redirect_delay: "3"
 ---
 You will be redirected to the Service Entrance Info App.
